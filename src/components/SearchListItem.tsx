@@ -1,19 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const SearchListItem = ({ data }): React.ReactNode => {
+const SearchListItem = ({ data }) => {
+
+  const navigate = useNavigate();
   return (
-    <div
-      style={{
-        width: "90vw",
-        height: "fit-content",
-        borderRadius: "8px",
-        marginBottom: "5px",
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
-      <img src={data.sprites.front_default} />
-      <div>{data.name}</div>
+    <div className="border border-gray-300 rounded-lg p-4 shadow-md mb-4 h-56 w-64 flex justify-center flex-col" onClick={() => navigate('/details', {state: data})}>
+      <img
+        src={data.sprites.front_default}
+        alt={data.name}
+        className="mx-auto mb-4"
+      />
+      <div className="text-center font-bold text-xl">{data.name}</div>
     </div>
   );
 };

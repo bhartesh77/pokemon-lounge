@@ -30,6 +30,7 @@ const Listings = () => {
     setIsLoading(false);
   };
 
+  console.log(pokemonState);
   useEffect(() => {
     fetchMorePokemons();
   }, []);
@@ -43,7 +44,7 @@ const Listings = () => {
     const scrollableHeight = scrollHeight - clientHeight;
     const percentage = (scrollTop / scrollableHeight) * 100;
 
-    if (percentage < 50 || isLoading) {
+    if (percentage < 50 || isLoading || pokemonList.length === 0) {
       return;
     }
     fetchMorePokemons();
