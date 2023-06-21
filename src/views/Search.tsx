@@ -64,7 +64,7 @@ const Search = () => {
         <CircularProgress />
       ) : (
         <>
-          {error && <p>Error: {error}</p>}
+          {error && <p className="text-2xl font-bold">Error: {error}</p>}
         </>
       )}
     </div>
