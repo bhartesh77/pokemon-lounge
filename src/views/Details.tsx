@@ -45,14 +45,14 @@ const Details = () => {
 
         <div className="flex flex-row justify-between">
           <div className="mr-4">
-            <p className="font-semibold mb-1">Abilities: {data.abilities.length}</p>
+            <p className="font-semibold mb-1 text-gray-700">Abilities: {data.abilities.length}</p>
             {data.abilities.map((obj) => (
               <div key={obj.ability.name} className="text-gray-500">{obj.ability.name}</div>
             ))}
           </div>
 
           <div>
-            <p className="font-semibold mb-1">Moves: {data.moves.length}</p>
+            <p className="font-semibold mb-1 text-gray-700">Moves: {data.moves.length}</p>
             <div className="max-h-40 overflow-y-auto">
               {data.moves.map((obj) => (
                 <div key={obj.move.name} className="text-gray-500">{obj.move.name}</div>
