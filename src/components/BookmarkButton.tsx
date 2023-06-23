@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const BookmarkButton = ({ onClick, name }) => {
   const [isBookmarked, setIsBookmarked] = useState(
-    JSON.parse(localStorage.getItem("pokemons")).filter(
+    JSON.parse(localStorage.getItem("pokemons"))?.filter(
       (pName) => pName === name
     ).length === 1
       ? true
