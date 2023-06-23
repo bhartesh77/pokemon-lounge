@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import BookmarkButton from "./BookmarkButton";
 
-const SearchListItem = ({ data, showBookmark }) => {
-  const handleBookmarkClick = (event) => {
+const SearchListItem = ({ data }) => {
+  const handleBookmarkClick = () => {
     console.log("button");
     let pokemons = JSON.parse(localStorage.getItem("pokemons"));
     if (!pokemons) pokemons = [data.name];
