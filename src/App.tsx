@@ -9,7 +9,6 @@ function App() {
       <div>Welcome to Pokémon Lounge</div>
       <div>
         <Link to="search"><Button>Search a Pokémon</Button></Link>
-        <Link to="listings"><Button>See All Pokémons</Button></Link>
         <Link to="bookmarks"><Button>See Bookmarks</Button></Link>
       </div>
     </>

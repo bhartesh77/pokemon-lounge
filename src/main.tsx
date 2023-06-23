@@ -14,6 +14,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Details from './views/Details.tsx';
+import Bookmarks from './views/Bookmarks.tsx';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
   },
   { 
     path: "/bookmarks",
-    element: <App />,
+    element: <Bookmarks />,
   },
 ]);
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import FilterOptions from "../components/FilterOptions";
 import { useLocation } from "react-router-dom";
 import SearchListItem from "../components/SearchListItem";
+import { CircularProgress } from "@mui/material";
 
 const Listings = () => {
   const location = useLocation();
@@ -62,7 +63,7 @@ const Listings = () => {
           <SearchListItem data={item} key={index} />
         </>
       ))}
-      {pokemonList.length > 0 && <div>Loading...</div>}
+      {pokemonList.length > 0 && <CircularProgress />}
     </div>
   );
 };

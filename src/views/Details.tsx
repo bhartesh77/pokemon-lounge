@@ -6,6 +6,18 @@ const Details = () => {
   const location = useLocation();
   const data = location.state;
 
+  const handleBookmarkClick = () => {
+    let pokemons = JSON.parse(localStorage.getItem('pokemons'));
+    if(!pokemons) pokemons = [data.name];
+    else {
+      if(pokemons.filter(name => name === data.name).length === 0) pokemons.push(data.name);
+      else {
+        pokemons = pokemons.filter(name => name!==data.name)
+      }
+    }
+    localStorage.setItem('pokemons', JSON.stringify(pokemons))
+  }
+
   return (
     <div className="max-w-sm mx-auto bg-white rounded overflow-hidden shadow-lg my-8">
       <img
@@ -13,7 +25,7 @@ const Details = () => {
         src={data.sprites.other["official-artwork"].front_default}
         alt={data.name}
       />
-      <div style={{position: "absolute", top: '20px', right: '20px'}}><BookmarkButton /></div>
+      <div style={{position: "absolute", top: '20px', right: '20px'}}><BookmarkButton onClick = {handleBookmarkClick} name={data.name}/></div>
       
       <div className="px-6 py-4">
         <div className="mb-2">
@@ -35,7 +47,7 @@ const Details = () => {
           <div className="mr-4">
             <p className="font-semibold mb-1">Abilities: {data.abilities.length}</p>
             {data.abilities.map((obj) => (
-              <div key={obj.ability.name}>{obj.ability.name}</div>
+              <div key={obj.ability.name} className="text-gray-500">{obj.ability.name}</div>
             ))}
           </div>
 
@@ -43,7 +55,7 @@ const Details = () => {
             <p className="font-semibold mb-1">Moves: {data.moves.length}</p>
             <div className="max-h-40 overflow-y-auto">
               {data.moves.map((obj) => (
-                <div key={obj.move.name}>{obj.move.name}</div>
+                <div key={obj.move.name} className="text-gray-500">{obj.move.name}</div>
               ))}
             </div>
           </div>
