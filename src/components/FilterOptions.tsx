@@ -22,14 +22,14 @@ const FilterOptions = () => {
         <AiOutlineFilter className="filter-icon mr-2" /> Filters
       </h2>
       <FilterSearch
-        heading={"Abilities"}
-        placeholder={"Enter abilities"}
-        suggestionsList={abilitiesList}
-      />
-      <FilterSearch
         heading={"Moves"}
         placeholder={"Enter moves"}
         suggestionsList={movesList}
+      />
+      <FilterSearch
+        heading={"Abilities"}
+        placeholder={"Enter abilities"}
+        suggestionsList={abilitiesList}
       />
     </div>
   );

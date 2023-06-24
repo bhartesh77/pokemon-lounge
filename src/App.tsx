@@ -1,9 +1,12 @@
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { AiOutlineSearch, AiOutlineBook } from "react-icons/ai";
-// import { GiPokemon } from "react-icons/gi";
-
+import isMobile from "./utils/isMobile";
+import MobileWarning from "./components/MobileWarning";
 function App() {
+
+  console.log(isMobile());
+  if(isMobile()) return <MobileWarning />
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-500">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Welcome to Pokémon Lounge</h1>

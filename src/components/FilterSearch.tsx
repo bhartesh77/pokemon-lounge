@@ -65,7 +65,7 @@ const FilterSearch = ({ heading, placeholder, suggestionsList }) => {
     <>
       <div className="mb-4 bg-yellow-200 rounded-lg p-4 shadow-md">
       <h3 className="text-lg font-semibold mb-2 text-gray-800">{heading}</h3>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap flex-col">
         {selectedChips.map((chip, index) => (
           <div
             key={index}
@@ -73,7 +73,7 @@ const FilterSearch = ({ heading, placeholder, suggestionsList }) => {
           >
             <span className="text-red-800">{chip}</span>
             <button
-              className="ml-2 text-red-600"
+              className="ml-2 text-red-600 ml-auto"
               onClick={() => handleChipClose(chip)}
             >
               X
