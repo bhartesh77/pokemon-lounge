@@ -13,7 +13,6 @@ const Bookmarks = () => {
   const fetchMorePokemons = async () => {
     setIsLoading(true);
     let index = 1;
-    console.log("hello");
     const pokemonDetailsArray = [];
     while (index <= 10 && index <= pokemonList.length) {
       await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonList[index - 1]}`)

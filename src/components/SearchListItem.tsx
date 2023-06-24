@@ -4,7 +4,6 @@ import BookmarkButton from "./BookmarkButton";
 
 const SearchListItem = ({ data }) => {
   const handleBookmarkClick = () => {
-    console.log("button");
     let pokemons = JSON.parse(localStorage.getItem("pokemons"));
     if (!pokemons) pokemons = [data.name];
     else {

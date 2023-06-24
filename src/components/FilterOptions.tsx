@@ -1,37 +1,36 @@
-const FilterOptions = ({ filterAbilities, setFilterAbilities }) => {
-  const handleAbilityChange = (event) => {
-    const { value, checked } = event.target;
-    if (checked) {
-      setFilterAbilities((prevAbilities) => [...prevAbilities, value]);
-    } else {
-      setFilterAbilities((prevAbilities) =>
-        prevAbilities.filter((ability) => ability !== value)
-      );
-    }
-  };
+import React, { useState, useEffect } from "react";
+import { AiOutlineFilter } from "react-icons/ai";
+import FilterSearch from "./FilterSearch";
+
+const FilterOptions = () => {
+  const [abilitiesList, setAbilitiesList] = useState([]);
+  const [movesList, setMovesList] = useState([]);
+
+  useEffect(() => {
+    fetch("https://pokeapi.co/api/v2/ability/?limit=358&offset=0")
+      .then((res) => res.json())
+      .then((res) => setAbilitiesList(res.results));
+
+    fetch("https://pokeapi.co/api/v2/move/?limit=358&offset=0")
+      .then((res) => res.json())
+      .then((res) => setMovesList(res.results));
+  }, []);
 
   return (
-    <div>
-      <h3>Filter by Abilities:</h3>
-      <label>
-        <input
-          type="checkbox"
-          value="ability1"
-          checked={filterAbilities.includes("ability1")}
-          onChange={handleAbilityChange}
-        />
-        Ability 1
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          value="ability2"
-          checked={filterAbilities.includes("ability2")}
-          onChange={handleAbilityChange}
-        />
-        Ability 2
-      </label>
-      {/* Add more checkboxes for other abilities */}
+    <div className="bg-white p-6 shadow-md rounded-md bg-slate-900">
+      <h2 className="flex items-center text-2xl font-bold mb-4">
+        <AiOutlineFilter className="filter-icon mr-2" /> Filters
+      </h2>
+      <FilterSearch
+        heading={"Abilities"}
+        placeholder={"Enter abilities"}
+        suggestionsList={abilitiesList}
+      />
+      <FilterSearch
+        heading={"Moves"}
+        placeholder={"Enter moves"}
+        suggestionsList={movesList}
+      />
     </div>
   );
 };
