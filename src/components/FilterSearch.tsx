@@ -63,45 +63,45 @@ const FilterSearch = ({ heading, placeholder, suggestionsList }) => {
 
   return (
     <>
-      <div className="mb-4">
-        <h3 className="text-lg font-semibold mb-2">{heading}</h3>
-        <div className="flex flex-wrap">
-          {selectedChips.map((chip, index) => (
-            <div
-              key={index}
-              className="bg-gray-200 rounded-md px-2 py-1 m-1 flex items-center"
+      <div className="mb-4 bg-yellow-200 rounded-lg p-4 shadow-md">
+      <h3 className="text-lg font-semibold mb-2 text-gray-800">{heading}</h3>
+      <div className="flex flex-wrap">
+        {selectedChips.map((chip, index) => (
+          <div
+            key={index}
+            className="bg-red-200 rounded-md px-2 py-1 m-1 flex items-center"
+          >
+            <span className="text-red-800">{chip}</span>
+            <button
+              className="ml-2 text-red-600"
+              onClick={() => handleChipClose(chip)}
             >
-              <span>{chip}</span>
-              <button
-                className="ml-2 text-red-600"
-                onClick={() => handleChipClose(chip)}
-              >
-                X
-              </button>
-            </div>
-          ))}
-        </div>
-        <input
-          className="w-full border-gray-300 rounded-md px-4 py-2"
-          type="text"
-          placeholder={placeholder}
-          value={searchText}
-          onChange={handleInputChange}
-        />
-        {searchText && suggestions.length > 0 && (
-          <ul className="mt-2 bg-white border border-gray-300 rounded-md shadow-md">
-            {suggestions.map((suggestion, index) => (
-              <li
-                key={index}
-                className="px-4 py-2 cursor-pointer hover:bg-gray-100"
-                onClick={() => handleSuggestionClick(suggestion)}
-              >
-                {suggestion}
-              </li>
-            ))}
-          </ul>
-        )}
+              X
+            </button>
+          </div>
+        ))}
       </div>
+      <input
+        className="w-full border border-gray-300 rounded-md px-4 py-2 mt-4 mb-2"
+        type="text"
+        placeholder={placeholder}
+        value={searchText}
+        onChange={handleInputChange}
+      />
+      {searchText && suggestions.length > 0 && (
+        <ul className="bg-white border border-gray-300 rounded-md shadow-md">
+          {suggestions.map((suggestion, index) => (
+            <li
+              key={index}
+              className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+              onClick={() => handleSuggestionClick(suggestion)}
+            >
+              {suggestion}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
     </>
   );
 };

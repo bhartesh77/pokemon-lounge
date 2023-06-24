@@ -50,13 +50,20 @@ const Bookmarks = () => {
   }, [isLoading]);
 
   return (
-    <div>
+    <div className="flex flex-wrap justify-center items-center bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-500">
       {pokemonState.map((item, index) => (
-        <>
-          <SearchListItem data={item} key={`searchListItem${index}`} />
-        </>
+        <div
+          key={`searchListItem${index}`}
+          className="bg-yellow-200 rounded-lg p-4 shadow-md m-4"
+        >
+          <SearchListItem data={item} />
+        </div>
       ))}
-      {pokemonList.length > 0 && <CircularProgress />}
+      {pokemonList.length > 0 && (
+        <div className="flex justify-center items-center mt-4">
+          <CircularProgress />
+        </div>
+      )}
     </div>
   );
 };
