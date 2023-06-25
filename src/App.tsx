@@ -5,7 +5,7 @@ import isMobile from "./utils/isMobile";
 import MobileWarning from "./components/MobileWarning";
 import Header from "./components/Header";
 import RightGhost from "./assets/RightGhost.jpg";
-import Pokeball from "./assets/Pokeball.gif";
+import Poke from './assets/Poke.png'
 import "./App.css";
 import FeaturedPokemons from "./components/FeaturedPokemons";
 
@@ -29,7 +29,7 @@ function App() {
             DISCOVER
           </button> */}
 
-          
+          {/* <img src={Poke} className="h-56 w-56 absolute animate-bounce bottom-2 left-16"/> */}
         </div>
 
         <div className="w-[65vw] ml-auto">
@@ -39,7 +39,7 @@ function App() {
             className="h-[50vh] bg-purple-500 rounded-tl-full ml-auto rounded-bl-full mt-16 neon-shadow-animation"
           />
 
-          <div>
+          <div className="pl-32">
             <FeaturedPokemons />
           </div>
         </div>
