@@ -48,7 +48,7 @@ const Search = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-500">
+    <div className="flex flex-col items-center justify-center h-screen">
       <div className="flex items-center space-x-4 mb-8">
         <input
           type="text"

@@ -93,7 +93,7 @@ const Listings = () => {
         setSelectedFilters: setSelectedFilters,
       }}
     >
-      <div className="flex flex-row bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-500">
+      <div className="flex flex-row h-[100vh] w-[100vw]">
         <div
           ref={divScrollRef}
           className="h-[100vh] overflow-scroll overflow-x-hidden w-[100vw] items-center flex flex-col pt-8"

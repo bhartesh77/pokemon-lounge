@@ -20,7 +20,7 @@ const Details = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-500 py-8">
+    <div className="h-[100vh] w-[100vw] flex items-center">
       <div className="max-w-sm mx-auto bg-red-100 rounded-lg overflow-hidden shadow-md">
         <img
           className="w-full h-48 object-cover"
