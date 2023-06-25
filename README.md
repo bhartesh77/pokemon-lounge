@@ -1,3 +1,7 @@
-# pokemon-lounge
+# Pokemon Lounge
 
-Deployed Web App - [Pokemon Lounge](https://pokemon-lounge.netlify.app/)
+### Installation Steps
+- npm i
+- npm run dev
+
+### Deployed Web App - [Pokemon Lounge](https://pokemon-lounge.netlify.app/)
