@@ -15,6 +15,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Details from './views/Details.tsx';
 import Bookmarks from './views/Bookmarks.tsx';
+import Compare from './views/Compare.tsx';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   { 
     path: "/bookmarks",
     element: <Bookmarks />,
+  },
+  { 
+    path: "/compare",
+    element: <Compare />,
   },
 ]);
 

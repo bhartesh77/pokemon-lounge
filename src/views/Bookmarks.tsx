@@ -52,8 +52,10 @@ const Bookmarks = () => {
   return (
     <div className="h-screen w-screen">
       {pokemonList.length === 0 && pokemonState.length === 0 && (
-        <div className="text-xl text-white">
-          You have not bookmarked any Pokémon yet!
+        <div className="bg-purple-900 text-white shadow-2xl p-8">
+          <p className="text-2xl font-semibold">
+            You have not bookmarked any Pokémon yet!
+          </p>
         </div>
       )}
       <div className="flex flex-wrap justify-center items-center">
