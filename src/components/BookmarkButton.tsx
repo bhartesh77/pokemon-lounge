@@ -8,7 +8,6 @@ const BookmarkButton = ({ onClick, name }) => {
       ? true
       : false
   );
-
   const handleBookmark = (event) => {
     event.stopPropagation();
     setIsBookmarked(!isBookmarked);
