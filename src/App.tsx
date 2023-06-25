@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineSearch, AiOutlineBook } from "react-icons/ai";
 import isMobile from "./utils/isMobile";
 import MobileWarning from "./components/MobileWarning";
@@ -10,6 +10,8 @@ import "./App.css";
 import FeaturedPokemons from "./components/FeaturedPokemons";
 
 function App() {
+
+  const navigate = useNavigate();
   if (isMobile()) return <MobileWarning />;
 
   return (
@@ -22,12 +24,12 @@ function App() {
         <div className="w-[35vw] flex flex-col pl-40 pt-32 z-10 relative">
           <div className="text-7xl text-white">Pokemon</div>
           <div className="text-7xl text-white">Lounge</div>
-          {/* <button
-            className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white font-semibold py-2 px-4 rounded-full shadow-lg opacity-50 backdrop-filter backdrop-blur-md backdrop-saturate-150 mt-8 w-32"
-            onClick={() => null}
+          <button
+            className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white font-semibold py-2 px-4 rounded-full shadow-xl shadow-inner backdrop-filter backdrop-blur-md backdrop-saturate-150 mt-8 w-32"
+            onClick={() => navigate('compare')}
           >
-            DISCOVER
-          </button> */}
+            COMPARE
+          </button>
 
           {/* <img src={Poke} className="h-56 w-56 absolute animate-bounce bottom-2 left-16"/> */}
         </div>
