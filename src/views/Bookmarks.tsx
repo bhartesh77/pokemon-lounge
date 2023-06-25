@@ -50,7 +50,7 @@ const Bookmarks = () => {
   }, [isLoading]);
 
   return (
-    <div className="bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-500">
+    <div className="h-[100vh] w-[100vw]">
       <div className="flex flex-wrap justify-center items-center ">
         {pokemonState.map((item, index) => (
           <div
