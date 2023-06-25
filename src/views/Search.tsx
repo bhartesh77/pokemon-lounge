@@ -78,7 +78,7 @@ const Search = () => {
         </>
       )}
 
-      <div className="mt-12 text-3xl text-white">
+      <div className="mt-12 text-3xl text-white animate-pulse">
         <GiPokecog />
       </div>
     </div>

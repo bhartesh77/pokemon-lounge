@@ -14,14 +14,14 @@ const Header = () => {
 
       <div className="flex ml-auto">
         <Link to="/search">
-          <button className="flex items-center justify-center px-4 py-2  text-white hover: focus:outline-none">
+          <button className="flex items-center justify-center px-4 py-2  text-white hover:scale-110 focus:outline-none ease-in-out duration-300">
             
             SEARCH A POKEMON
           </button>
         </Link>
 
         <Link to="/bookmarks">
-          <button className="flex items-center justify-center ml-4 px-4 py-2  text-white  hover: focus:outline-none">
+          <button className="flex items-center justify-center px-4 py-2  text-white hover:scale-110 focus:outline-none ease-in-out duration-300">
             
             SEE BOOKMARKS
           </button>
