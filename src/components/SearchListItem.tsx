@@ -19,21 +19,16 @@ const SearchListItem = ({ data }) => {
   const navigate = useNavigate();
   return (
     <div
-      className="border border-gray-300 rounded-lg p-4 shadow-md mb-4 h-56 w-64 flex justify-center flex-col cursor-pointer bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300"
+      className="rounded-lg p-4 shadow-lg mb-4 h-56 w-64 flex justify-center flex-col cursor-pointer bg-gradient-to-br from-purple-800 via-purple-700 to-purple-600 text-white shadow-xl"
       onClick={() => navigate("/details", { state: data })}
     >
-      <div className="text-center font-bold text-xl text-gray-800">
-        {data.name}
-      </div>
+      <div className="text-center font-bold text-xl">{data.name}</div>
       <img
         src={data.sprites.front_default}
         alt={data.name}
         className="mx-auto mb-4"
       />
-      <BookmarkButton
-        onClick={handleBookmarkClick}
-        name={data.name}
-      />
+      <BookmarkButton onClick={handleBookmarkClick} name={data.name} />
     </div>
   );
 };

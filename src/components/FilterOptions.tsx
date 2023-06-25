@@ -17,7 +17,7 @@ const FilterOptions = () => {
   }, []);
 
   return (
-    <div className="bg-white p-6 shadow-md rounded-md bg-slate-900">
+    <div className="p-6 text-white">
       <h2 className="flex items-center text-2xl font-bold mb-4">
         <AiOutlineFilter className="filter-icon mr-2" /> Filters
       </h2>

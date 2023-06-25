@@ -5,7 +5,7 @@ import isMobile from "./utils/isMobile";
 import MobileWarning from "./components/MobileWarning";
 import Header from "./components/Header";
 import RightGhost from "./assets/RightGhost.jpg";
-import Poke from './assets/Poke.png'
+// import Poke from './assets/Poke.png'
 import "./App.css";
 import FeaturedPokemons from "./components/FeaturedPokemons";
 
