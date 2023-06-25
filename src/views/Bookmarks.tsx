@@ -50,7 +50,6 @@ const Bookmarks = () => {
   }, [isLoading]);
 
 
-  console.log(pokemonList.length);
   return (
     <div className="h-[100vh] w-[100vw]">
       {pokemonList.length === 0 && pokemonState.length === 0 && <div className="text-xl text-white">You have not bookmarked any Pokemons yet!</div>}
