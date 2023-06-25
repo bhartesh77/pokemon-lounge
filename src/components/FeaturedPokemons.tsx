@@ -15,7 +15,6 @@ const FeaturedPokemons = () => {
       })
     );
 
-    console.log("hello");
     setPokemonsList(pokemons);
   };
 
@@ -23,7 +22,6 @@ const FeaturedPokemons = () => {
     fetchPokemons();
   }, []);
 
-  console.log(pokemonsList);
   return (
     <div className="overflow-hidden mt-8 absolute bottom-0">
       {pokemonsList.length > 0 && (

@@ -34,7 +34,7 @@ const Listings = () => {
 
           const allAbilitiesPresent =
             selectedFilters.abilities.filter((element) =>
-            newAbilities.includes(element)
+              newAbilities.includes(element)
             ).length === selectedFilters.abilities.length;
 
           const allMovesPresent =
@@ -43,7 +43,6 @@ const Listings = () => {
             ).length === selectedFilters.moves.length;
 
           if (allAbilitiesPresent && allMovesPresent) {
-            console.log("hello");
             pokemonDetailsArray.push(res);
           }
         });
