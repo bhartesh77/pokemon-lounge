@@ -5,24 +5,38 @@ import isMobile from "./utils/isMobile";
 import MobileWarning from "./components/MobileWarning";
 import Header from "./components/Header";
 import RightGhost from "./assets/RightGhost.jpg";
-import './App.css';
+import "./App.css";
 
 function App() {
   if (isMobile()) return <MobileWarning />;
 
   return (
     <div className="h-[100vh] w-[100vw]">
-      <div className="h-[10vh]"><Header /></div>
-      
+      <div className="h-[10vh]">
+        <Header />
+      </div>
 
       <div className="w-[100vw] flex h-[90vh]">
-        <div></div>
+        <div>
+          <div className="flex flex-col pl-40 pt-32 z-10">
+            <div className="text-7xl text-white">Pokemon</div>
+            <div className="text-7xl text-white">Lounge</div>
+            {/* <button
+              className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white font-semibold py-2 px-4 rounded-full shadow opacity-70 mt-8 w-32"
+              onClick={() => null}
+            >
+              DISCOVER
+            </button> */}
+          </div>
+        </div>
 
         <img
-      src={RightGhost}
-      alt="Right Ghost"
-      className="h-[50vh] bg-purple-500 rounded-tl-full rounded-bl-full ml-auto mt-20 neon-shadow-animation"
-    />
+          src={RightGhost}
+          alt="Right Ghost"
+          className="h-[50vh] bg-purple-500 rounded-tl-full rounded-bl-full ml-auto mt-20 neon-shadow-animation"
+        />
+
+        <div></div>
       </div>
     </div>
   );
