@@ -49,15 +49,18 @@ const Bookmarks = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isLoading]);
 
-
   return (
-    <div className="h-[100vh] w-[100vw]">
-      {pokemonList.length === 0 && pokemonState.length === 0 && <div className="text-xl text-white">You have not bookmarked any Pokemons yet!</div>}
-      <div className="flex flex-wrap justify-center items-center ">
+    <div className="h-screen w-screen">
+      {pokemonList.length === 0 && pokemonState.length === 0 && (
+        <div className="text-xl text-white">
+          You have not bookmarked any Pokémon yet!
+        </div>
+      )}
+      <div className="flex flex-wrap justify-center items-center">
         {pokemonState.map((item, index) => (
           <div
             key={`searchListItem${index}`}
-            className="bg-yellow-200 rounded-lg p-4 shadow-md m-4"
+            className="bg-gray-900 rounded-lg p-4 shadow-xl m-4"
           >
             <SearchListItem data={item} />
           </div>
