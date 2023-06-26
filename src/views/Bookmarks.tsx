@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SearchListItem from "../components/SearchListItem";
 import { CircularProgress } from "@mui/material";
 
@@ -7,8 +7,8 @@ const Bookmarks = () => {
     JSON.parse(localStorage.getItem("pokemons")) || []
   );
   const [pokemonState, setPokemonState] = useState([]);
-
   const [isLoading, setIsLoading] = useState(false);
+  const scrollDivRef = useRef(null);
 
   const fetchMorePokemons = async () => {
     setIsLoading(true);
@@ -30,10 +30,9 @@ const Bookmarks = () => {
   }, []);
 
   const handleScroll = () => {
-    const scrollHeight = document.documentElement.scrollHeight;
-    const clientHeight = document.documentElement.clientHeight;
-    const scrollTop =
-      document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = scrollDivRef.current.scrollHeight;
+    const clientHeight = scrollDivRef.current.clientHeight;
+    const scrollTop = scrollDivRef.current.scrollTop || document.body.scrollTop;
 
     const scrollableHeight = scrollHeight - clientHeight;
     const percentage = (scrollTop / scrollableHeight) * 100;
@@ -45,12 +44,16 @@ const Bookmarks = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const divElement = scrollDivRef.current;
+    divElement.addEventListener("scroll", handleScroll);
+    return () => divElement.removeEventListener("scroll", handleScroll);
   }, [isLoading]);
 
   return (
-    <div className="h-screen w-screen">
+    <div
+      className="h-screen w-screen overflow-scroll overflow-x-hidden"
+      ref={scrollDivRef}
+    >
       {pokemonList.length === 0 && pokemonState.length === 0 && (
         <div className="bg-purple-900 text-white shadow-2xl p-8">
           <p className="text-2xl font-semibold">
