@@ -4,17 +4,28 @@ const FeaturedPokemons = () => {
   const [pokemonsList, setPokemonsList] = useState([]);
 
   const fetchPokemons = async () => {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon");
-    const data = await response.json();
+    const data = [
+      "charizard",
+      "pikachu",
+      "eevee",
+      "gengar",
+      "dragonite",
+      "lucario",
+      "gardevoir",
+      "blaziken",
+      "umbreon",
+      "greninja",
+    ];
 
     const pokemons = await Promise.all(
-      data.results.map(async (obj) => {
-        const res = await fetch(obj.url);
+      data.map(async (name) => {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
         const pokemonData = await res.json();
         return pokemonData;
       })
     );
 
+    console.log(pokemons)
     setPokemonsList(pokemons);
   };
 
@@ -52,7 +63,7 @@ const FeaturedPokemons = () => {
                     />
                   </div>
                   <div className="flex flex-col justify-center p-4">
-                    <div className="text-xl font-semibold">{name}</div>
+                    <div className="text-xl font-semibold text-slate-900">{name}</div>
                     <div className="text-gray-500">{types[0].type.name}</div>
                   </div>
                 </div>

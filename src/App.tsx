@@ -38,7 +38,7 @@ function App() {
           <img
             src={RightGhost}
             alt="Right Ghost"
-            className="h-[50vh] bg-purple-500 rounded-tl-full ml-auto rounded-bl-full mt-16 neon-shadow-animation"
+            className="h-[50vh] bg-purple-500 rounded-tl-full ml-auto rounded-bl-full mt-16 neon-shadow-animation object-cover"
           />
 
           <div className="pl-32">
