@@ -51,14 +51,14 @@ const Compare = () => {
           value={pokemon1}
           onChange={handlePokemon1Change}
           placeholder="Enter Pokémon 1"
-          className="bg-slate-200 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 mr-32 shadow-neon shadow-2xl"
+          className="bg-slate-200 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 mr-32 shadow-neon shadow-2xl"
         />
         <input
           type="text"
           value={pokemon2}
           onChange={handlePokemon2Change}
           placeholder="Enter Pokémon 2"
-          className="bg-slate-200 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 shadow-neon"
+          className="bg-slate-200 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 shadow-neon"
         />
       </div>
 
