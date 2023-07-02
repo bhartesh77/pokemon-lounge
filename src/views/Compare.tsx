@@ -45,10 +45,10 @@ const Compare = () => {
 
         {!(pokemonData1 && pokemonData2) && (
           <div
-            className={`transition-transform duration-300 ${
+            className={`transition-transform duration-300 w-screen ${
               pokemonData1 && pokemonData2
                 ? "flex mb-4 w-screen px-16 justify-between pt-4"
-                : "flex flex-col w-[screen] left-8 absolute justify-center h-screen items-center"
+                : "flex flex-col w-[screen] justify-center h-screen pl-8"
             }`}
           >
             <div className="flex items-center">
@@ -67,6 +67,19 @@ const Compare = () => {
               placeholder="Enter Pokémon 2"
               className="bg-slate-200 px-4 py-2 w-44 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 shadow-neon"
             />
+
+            <div className="w-[100%] flex animate-pulse cursor-pointer">
+              <div
+                onClick={handleSearch}
+                className={`h-24 w-24 right-0 absolute flex items-center justify-center pr-8 ${
+                  pokemonData1 && pokemonData2
+                    ? "bottom-8"
+                    : "top-1/2 transform -translate-y-1/2"
+                } text-white font-semibold rounded-full hover:scale-110 transition-transform duration-300 shadow-2xl focus:outline-none`}
+              >
+                <img src={Poke} className="absolute h-24" alt="Pokeball" />
+              </div>
+            </div>
           </div>
         )}
 
@@ -79,21 +92,6 @@ const Compare = () => {
             <CompareCard data1={pokemonData2} data2={pokemonData1} />
           )}
         </div>
-
-        {!(pokemonData1 && pokemonData2) && (
-          <div className="w-[100%] flex justify-center animate-pulse cursor-pointer">
-            <div
-              onClick={handleSearch}
-              className={`h-24 w-24 right-8 absolute flex items-center justify-center ${
-                pokemonData1 && pokemonData2
-                  ? "bottom-8"
-                  : "top-1/2 transform -translate-y-1/2"
-              } text-white font-semibold rounded-full hover:scale-110 transition-transform duration-300 shadow-2xl focus:outline-none`}
-            >
-              <img src={Poke} className="absolute h-24" alt="Pokeball" />
-            </div>
-          </div>
-        )}
       </div>
     );
 
