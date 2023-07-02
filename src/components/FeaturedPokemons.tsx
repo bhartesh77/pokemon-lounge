@@ -35,7 +35,7 @@ const FeaturedPokemons = () => {
 
   if (isMobile())
     return (
-      <div className="overflow-hidden mt-8 absolute bottom-0 w-[100vw] overflow-hidden">
+      <div className="overflow-hidden absolute bottom-0 w-[100vw] overflow-hidden">
         {pokemonsList.length > 0 && (
           <div className="text-white text-lg font-semibold pl-4">
             Featured Pokemons
