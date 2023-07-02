@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CompareCard from "../components/CompareCard";
 import Poke from "../assets/Poke.png";
 import "../App.css";
+import Header from "../components/Header";
 
 const Compare = () => {
   const [pokemon1, setPokemon1] = useState("");
@@ -35,15 +36,14 @@ const Compare = () => {
     searchPokemon(pokemon2.toLowerCase(), setPokemonData2);
   };
 
-  console.log(pokemonData1);
-
   return (
     <div className="h-screen w-screen">
+      <Header />
       <div
-        className={` transition-transform duration-300 ${
+        className={`transition-transform duration-300 ${
           pokemonData1 && pokemonData2
             ? "flex mb-4 w-screen px-16 justify-between pt-4"
-            : "flex w-[screen] px16 justify-center h-screen items-center"
+            : "flex flex-col w-[screen] left-8 absolute justify-center h-screen items-center"
         }`}
       >
         <input
@@ -51,14 +51,14 @@ const Compare = () => {
           value={pokemon1}
           onChange={handlePokemon1Change}
           placeholder="Enter Pokémon 1"
-          className="bg-slate-200 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 mr-32 shadow-neon shadow-2xl"
+          className="bg-slate-200 px-4 py-2 w-44 mb-4 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 shadow-neon shadow-2xl"
         />
         <input
           type="text"
           value={pokemon2}
           onChange={handlePokemon2Change}
           placeholder="Enter Pokémon 2"
-          className="bg-slate-200 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 shadow-neon"
+          className="bg-slate-200 px-4 py-2 w-44 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 shadow-neon"
         />
       </div>
 
@@ -74,7 +74,7 @@ const Compare = () => {
       <div className="w-[100%] flex justify-center animate-pulse cursor-pointer">
         <div
           onClick={handleSearch}
-          className={`h-24 w-24 absolute flex items-center justify-center ${
+          className={`h-24 w-24 right-8 absolute flex items-center justify-center ${
             pokemonData1 && pokemonData2
               ? "bottom-8"
               : "top-1/2 transform -translate-y-1/2"

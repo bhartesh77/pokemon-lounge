@@ -7,7 +7,7 @@ import isMobile from "../utils/isMobile";
 const Header = () => {
   if (isMobile())
     return (
-      <div className="flex items-center justify-between px-2 py-2 text-white pt-8 pr-32">
+      <div className="fixed z-50 flex items-center justify-between px-2 py-2 text-white pt-8 pr-32">
         <img src={Logo} alt="Logo" className="h-36 absolute" />
 
         <BurgerMenu />
