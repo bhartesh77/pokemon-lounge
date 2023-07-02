@@ -37,9 +37,27 @@ const BurgerMenu = () => {
         } transition-transform duration-300`}
       >
         <ul className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 list-none p-0 m-0 text-center">
+        <li className="mb-6">
+            <button
+              onClick={() => navigate("/")}
+              className="text-purple-600 hover:text-blue-800 text-xl"
+            >
+              Home
+            </button>
+          </li>
+
           <li className="mb-6">
             <button
-              onClick={() => navigate("search")}
+              onClick={() => navigate("/compare")}
+              className="text-purple-600 hover:text-blue-800 text-xl"
+            >
+              Compare Pokémons
+            </button>
+          </li>
+          
+          <li className="mb-6">
+            <button
+              onClick={() => navigate("/search")}
               className="text-purple-600 hover:text-blue-800 text-xl"
             >
               Search a Pokémon
@@ -47,7 +65,7 @@ const BurgerMenu = () => {
           </li>
           <li>
           <button
-              onClick={() => navigate("bookmarks")}
+              onClick={() => navigate("/bookmarks")}
               className="text-purple-600 hover:text-blue-800 text-xl"
             >
               See Bookmarks
