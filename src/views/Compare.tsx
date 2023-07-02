@@ -4,6 +4,7 @@ import Poke from "../assets/Poke.png";
 import "../App.css";
 import Header from "../components/Header";
 import isMobile from "../utils/isMobile";
+import { FaArrowLeft } from "react-icons/fa";
 
 const Compare = () => {
   const [pokemon1, setPokemon1] = useState("");
@@ -41,30 +42,36 @@ const Compare = () => {
     return (
       <div className="h-screen w-screen">
         <Header />
-        <div
-          className={`transition-transform duration-300 ${
-            pokemonData1 && pokemonData2
-              ? "flex mb-4 w-screen px-16 justify-between pt-4"
-              : "flex flex-col w-[screen] left-8 absolute justify-center h-screen items-center"
-          }`}
-        >
-          <input
-            type="text"
-            value={pokemon1}
-            onChange={handlePokemon1Change}
-            placeholder="Enter Pokémon 1"
-            className="bg-slate-200 px-4 py-2 w-44 mb-4 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 shadow-neon shadow-2xl"
-          />
-          <input
-            type="text"
-            value={pokemon2}
-            onChange={handlePokemon2Change}
-            placeholder="Enter Pokémon 2"
-            className="bg-slate-200 px-4 py-2 w-44 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 shadow-neon"
-          />
-        </div>
 
-        <div className="flex w-screen justify-between px-16">
+        {!(pokemonData1 && pokemonData2) && (
+          <div
+            className={`transition-transform duration-300 ${
+              pokemonData1 && pokemonData2
+                ? "flex mb-4 w-screen px-16 justify-between pt-4"
+                : "flex flex-col w-[screen] left-8 absolute justify-center h-screen items-center"
+            }`}
+          >
+            <div className="flex items-center">
+              <input
+                type="text"
+                value={pokemon1}
+                onChange={handlePokemon1Change}
+                placeholder="Enter Pokémon 1"
+                className="bg-slate-200 px-4 py-2 w-44 mb-4 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 shadow-neon shadow-2xl"
+              />
+            </div>
+            <input
+              type="text"
+              value={pokemon2}
+              onChange={handlePokemon2Change}
+              placeholder="Enter Pokémon 2"
+              className="bg-slate-200 px-4 py-2 w-44 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 shadow-neon"
+            />
+          </div>
+        )}
+
+        {/* <FaArrowLeft className="text-purple-500 text-3xl cursor-pointer" /> */}
+        <div className="flex w-screen justify-between absolute bottom-16">
           {pokemonData1 && pokemonData2 && (
             <CompareCard data1={pokemonData1} data2={pokemonData2} />
           )}
@@ -73,18 +80,20 @@ const Compare = () => {
           )}
         </div>
 
-        <div className="w-[100%] flex justify-center animate-pulse cursor-pointer">
-          <div
-            onClick={handleSearch}
-            className={`h-24 w-24 right-8 absolute flex items-center justify-center ${
-              pokemonData1 && pokemonData2
-                ? "bottom-8"
-                : "top-1/2 transform -translate-y-1/2"
-            } text-white font-semibold rounded-full hover:scale-110 transition-transform duration-300 shadow-2xl focus:outline-none`}
-          >
-            <img src={Poke} className="absolute h-24" alt="Pokeball" />
+        {!(pokemonData1 && pokemonData2) && (
+          <div className="w-[100%] flex justify-center animate-pulse cursor-pointer">
+            <div
+              onClick={handleSearch}
+              className={`h-24 w-24 right-8 absolute flex items-center justify-center ${
+                pokemonData1 && pokemonData2
+                  ? "bottom-8"
+                  : "top-1/2 transform -translate-y-1/2"
+              } text-white font-semibold rounded-full hover:scale-110 transition-transform duration-300 shadow-2xl focus:outline-none`}
+            >
+              <img src={Poke} className="absolute h-24" alt="Pokeball" />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
 
