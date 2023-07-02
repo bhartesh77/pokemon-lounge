@@ -16,18 +16,18 @@ const BurgerMenu = () => {
         onClick={handleToggleMenu}
       >
         <span
-          className={`block w-6 h-1 bg-purple-600 transition-all duration-300 transform ${
-            isOpen ? "rotate-45 translate-y-1.5" : ""
+          className={`block w-[24px] h-1 bg-purple-600 transition-all duration-300 transform ${
+            isOpen ? "rotate-45 translate-y-[8px]" : ""
           }`}
         ></span>
         <span
-          className={`block w-6 h-1 bg-purple-600 mt-1 transition-all duration-300 opacity-100 ${
-            isOpen ? "opacity-0" : ""
+          className={`block w-[24px] h-1 bg-purple-600 mt-1 transition-all  duration-300 opacity-100 ${
+            isOpen ? "opacity-[0]" : ""
           }`}
         ></span>
         <span
-          className={`block w-6 h-1 bg-purple-600 mt-1 transition-all duration-300 transform ${
-            isOpen ? "-rotate-45 -translate-y-1.5" : ""
+          className={`block w-[24px] h-1 bg-purple-600 mt-1 transition-all duration-300 transform ${
+            isOpen ? "-rotate-45 -translate-y-[8px]" : ""
           }`}
         ></span>
       </button>
