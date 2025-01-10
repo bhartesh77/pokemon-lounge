@@ -2,10 +2,11 @@ import React from "react";
 import Logo from "../assets/Logo.png";
 import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu/BurgerMenu";
-import isMobile from "../utils/isMobile";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Header = () => {
-  if (isMobile())
+  var isMobile = useIsMobile();
+  if (isMobile)
     return (
       <div className="fixed z-50 flex items-center justify-between px-2 py-2 text-white pt-8 pr-32">
         <img src={Logo} alt="Logo" className="h-36 absolute" />
@@ -15,18 +16,18 @@ const Header = () => {
     );
 
   return (
-    <div className="flex items-center justify-between px-4 py-2 text-white pt-8 pr-32">
-      <img src={Logo} alt="Logo" className="h-36 absolute left-16" />
+    <div className="flex items-center justify-between px-2 py-2 text-white">
+      <img src={Logo} alt="Logo" className="h-40" />
 
       <div className="flex ml-auto">
         <Link to="/search">
-          <button className="flex items-center justify-center px-4 py-2  text-white hover:scale-110 focus:outline-none ease-in-out duration-300">
+          <button className="flex items-center justify-center px-4  text-white hover:scale-110 focus:outline-none ease-in-out duration-300">
             SEARCH A POKEMON
           </button>
         </Link>
 
         <Link to="/bookmarks">
-          <button className="flex items-center justify-center px-4 py-2  text-white hover:scale-110 focus:outline-none ease-in-out duration-300">
+          <button className="flex items-center justify-center px-4  text-white hover:scale-110 focus:outline-none ease-in-out duration-300">
             SEE BOOKMARKS
           </button>
         </Link>
