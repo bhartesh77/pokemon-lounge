@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import SearchListItem from "../components/SearchListItem";
 import { CircularProgress } from "@mui/material";
 import FilterContextProvider from "../context/FilterContext";
+import Header from "../components/Header";
 
 const Listings = () => {
   const location = useLocation();
@@ -92,6 +93,8 @@ const Listings = () => {
         setSelectedFilters: setSelectedFilters,
       }}
     >
+      <div className="h-screen w-screen flex flex-col items-center">
+      <Header />
       <div className="flex flex-row h-[100vh] w-[100vw]">
         <div
           ref={divScrollRef}
@@ -107,6 +110,7 @@ const Listings = () => {
           ))}
           {pokemonList.length > 0 && <CircularProgress />}
         </div>
+      </div>
       </div>
     </FilterContextProvider>
   );
