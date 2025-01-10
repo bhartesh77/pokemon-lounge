@@ -50,7 +50,8 @@ const Search = () => {
 
   return (
     <>
-      <Header />
+      <div className="h-screen w-screen flex flex-col items-center">
+        <Header />
       <div className="flex flex-col items-center justify-center h-screen">
         <div className="flex items-center space-x-4 mb-8">
           <input
@@ -84,6 +85,7 @@ const Search = () => {
         <div className="mt-12 text-3xl text-white animate-pulse">
           <GiPokecog />
         </div>
+      </div>
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import SearchListItem from "../components/SearchListItem";
 import { CircularProgress } from "@mui/material";
+import Header from "../components/Header";
 
 const Bookmarks = () => {
   const [pokemonList, setPokemonList] = useState(
@@ -50,6 +51,8 @@ const Bookmarks = () => {
   }, [isLoading]);
 
   return (
+    <div className="h-screen w-screen flex flex-col items-center">
+      <Header />
     <div
       className="h-screen w-screen overflow-scroll overflow-x-hidden"
       ref={scrollDivRef}
@@ -76,6 +79,7 @@ const Bookmarks = () => {
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 };

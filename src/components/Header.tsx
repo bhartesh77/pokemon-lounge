@@ -17,7 +17,9 @@ const Header = () => {
 
   return (
     <div className="flex items-center justify-between px-2 py-2 text-white">
-      <img src={Logo} alt="Logo" className="h-40" />
+      <Link to="/">
+        <img src={Logo} alt="Logo" className="h-40" />
+      </Link>
 
       <div className="flex ml-auto">
         <Link to="/search">
